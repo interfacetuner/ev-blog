@@ -16,7 +16,7 @@ header {
   align-items: center;
   height: 3rem;
   padding-left: 1rem;
-  background-color: #737495;
+  background-color: blue;
   box-shadow: 3px 3px 3px 3px #808080;
   color: white;
 }
@@ -50,16 +50,16 @@ section > article {
   display: flex;
   justify-content: space-between;
   min-width: 15rem;
-  color: white;
+  color: green;
   margin: 0.1rem;
-  background-color: #737495;
+  background-color: black;
 }
 article > div {
   padding: 0.5rem;
 }
 article > div:nth-child(2) {
   width: 2rem;
-  background-color: #f17d80;
+  background-color: red;
   text-align: center;
 }
 label {
@@ -78,7 +78,7 @@ select {
   font-size: 1rem;
   font-weight: bold;
   padding: 0.4rem;
-  color: #f17d80;
+  color: red;
   border: 2px solid #737495;
   border-radius: 0;
   outline: none;
@@ -90,7 +90,7 @@ button {
   font-size: 1rem;
   margin: 0.5rem 0 0 auto;
   padding: 0.4rem;
-  background-color: #f17d80;
+  background-color: red;
   color: white;
   border: none;
   outline: none;

@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from "./components/Header/Header";
-// import "./styles.css";
+import HomePage from "./pages/HomePage/HomePage";
+import Boosted from "./pages/Boosted/Boosted";
+import OneWheel from "./pages/OneWheel/OneWheel";
+import SegWay from "./pages/SegWay/SegWay";
+import "./index.css";
+
 
 import { auth } from './services/firebase';
 
@@ -14,6 +20,8 @@ export default function App() {
       level: "3",
     },
   });
+
+  const NotFound = (props) => <div>404 Sorry That Page Doesnt Exist</div>;
 
   async function getAppData() {
     try {
@@ -88,7 +96,31 @@ export default function App() {
       <>
         <Header user={state.user} />
         <main>
-        <section>
+       <BrowserRouter>
+        <Switch>
+      <Route exact path="/" render={(props) => 
+         <HomePage 
+         {...props}
+          />
+        } /> 
+        <Route path="/pages/Boosted/Boosted" render={(props) => 
+          <Boosted {...props} 
+          />
+        } />
+        <Route path="/pages/OneWheel/OneWheel" render={(props) => 
+          <OneWheel {...props} 
+          />
+        } />
+        <Route path="/pages/SegWay/SegWay" render={(props) => 
+          <SegWay {...props} 
+          />
+        } />
+        <Route render={(props) =>
+        <NotFound />
+        }/>
+        </Switch>
+        </BrowserRouter>
+      {/* <section>
         {state.blogs.map((s) => (
           <article key={s.blog}>
             <div>{s.blog}</div> <div>{s.level}</div>
@@ -100,11 +132,12 @@ export default function App() {
         <hr />
         <form onSubmit={addBlog}>
           <label>
-            <span>EV-BLOG</span>
+            <span>Comments</span>
+            &nbsp;&nbsp;&nbsp;
             <input name="blog" value={state.newBlog.blog} onChange={handleChange} />
           </label>
           <label>
-            <span>LEVEL</span>
+            <span>Rating</span>
             <select name="level" value={state.newBlog.level} onChange={handleChange} >
               <option value="1">1</option>
               <option value="2">2</option>
@@ -117,7 +150,7 @@ export default function App() {
           </form>
           </>
           }
-        </section>
+        </section> */}
       </main>
     </>
   );
