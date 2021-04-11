@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from "../../components/Header/Header";
 import HomePage from "../../pages/HomePage/HomePage";
+//import Form from "../../components/Form/Form";
 
 const Boosted = (props) => {
   return (

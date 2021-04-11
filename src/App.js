@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import Boosted from "./pages/Boosted/Boosted";
 import OneWheel from "./pages/OneWheel/OneWheel";
+import Form from "./components/Form/Form";
 import SegWay from "./pages/SegWay/SegWay";
 import "./index.css";
 
@@ -113,6 +114,10 @@ export default function App() {
         } />
         <Route path="/pages/SegWay/SegWay" render={(props) => 
           <SegWay {...props} 
+          />
+        } />
+        <Route render="/components/Form/Form" render={(props) => 
+          <Form {...props} 
           />
         } />
         <Route render={(props) =>
