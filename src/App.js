@@ -14,6 +14,7 @@ import { auth } from './services/firebase';
 export default function App() {
 
   const [state, setState] = useState({
+    showForm: false,
     user: null,
     blogs: [{ blog: "Comment", level: "4" }],
     newBlog: {
@@ -125,7 +126,8 @@ export default function App() {
         }/>
         </Switch>
         </BrowserRouter>
-      {/* <section>
+
+      <section>
         {state.blogs.map((s) => (
           <article key={s.blog}>
             <div>{s.blog}</div> <div>{s.level}</div>
@@ -155,7 +157,7 @@ export default function App() {
           </form>
           </>
           }
-        </section> */}
+        </section>
       </main>
     </>
   );
