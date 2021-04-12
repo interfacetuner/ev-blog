@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
@@ -12,9 +13,14 @@ import "./index.css";
 import { auth } from './services/firebase';
 
 export default function App() {
+  // const Form = (props) => {
+  //   const { location } = props;
+  //   if (location.pathname.match('./')){
+  //       return null;
+  //   }
 
   const [state, setState] = useState({
-    showForm: false,
+    Form: false,
     user: null,
     blogs: [{ blog: "Comment", level: "4" }],
     newBlog: {
@@ -94,6 +100,10 @@ export default function App() {
     })) 
   }
 
+    // function renderForm({ Form }) {
+    //       if (this.props.path  !== './') {
+    //           return ( 
+
     return (
       <>
         <Header user={state.user} />
@@ -102,7 +112,7 @@ export default function App() {
         <Switch>
       <Route exact path="/" render={(props) => 
          <HomePage 
-         {...props}
+          {...props}
           />
         } /> 
         <Route path="/pages/Boosted/Boosted" render={(props) => 
@@ -125,9 +135,10 @@ export default function App() {
         <NotFound />
         }/>
         </Switch>
-        </BrowserRouter>
-
-      <section>
+        
+      
+        {/* <Switch>
+        <section>
         {state.blogs.map((s) => (
           <article key={s.blog}>
             <div>{s.blog}</div> <div>{s.level}</div>
@@ -158,7 +169,9 @@ export default function App() {
           </>
           }
         </section>
+        </Switch> */}
+        </BrowserRouter>
       </main>
     </>
   );
-}
+      };

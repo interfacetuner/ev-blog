@@ -1,11 +1,16 @@
-
-// import React from 'react';
+// import App from '../../App.js';
+// import { withRouter } from 'react-router-dom';
+// import { useState, useEffect } from "react";
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import Boosted from "../../pages/Boosted/Boosted";
+// import OneWheel from "../../pages/OneWheel/OneWheel";
+// import SegWay from "../../pages/SegWay/SegWay";
 
 
 // const Form = (props) => {
+//   (this.state.Form)
 //         return (
-
-//           <section>
+//           <>
 //             {state.blogs.map((s) => (
 //               <article key={s.blog}>
 //                 <div>{s.blog}</div> <div>{s.level}</div>
@@ -34,8 +39,11 @@
 //                 <button>ADD COMMENT</button>
 //               </form>
 //               </>
-//               }
-//             </section> 
-//         )};
+          
+//         ;
+            
+           
+
+          
 
 //         export default Form;
