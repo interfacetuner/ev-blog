@@ -20,7 +20,7 @@ export default function App() {
   //   }
 
   const [state, setState] = useState({
-    Form: false,
+    form: true,
     user: null,
     blogs: [{ blog: "Comment", level: "4" }],
     newBlog: {
@@ -103,6 +103,11 @@ export default function App() {
     // function renderForm({ Form }) {
     //       if (this.props.path  !== './') {
     //           return ( 
+      const isFormTrue = state.form;
+
+     function handleClick(state) {
+        state.form = true;
+      } 
 
     return (
       <>
@@ -112,7 +117,7 @@ export default function App() {
         <Switch>
       <Route exact path="/" render={(props) => 
          <HomePage 
-          {...props}
+          {...props} handleClick={handleClick}
           />
         } /> 
         <Route path="/pages/Boosted/Boosted" render={(props) => 
@@ -135,9 +140,12 @@ export default function App() {
         <NotFound />
         }/>
         </Switch>
+        </BrowserRouter>
+        </main>
         
-      
-        {/* <Switch>
+        <> 
+        { isFormTrue  ?
+        
         <section>
         {state.blogs.map((s) => (
           <article key={s.blog}>
@@ -167,11 +175,12 @@ export default function App() {
             <button>ADD COMMENT</button>
           </form>
           </>
+          
           }
         </section>
-        </Switch> */}
-        </BrowserRouter>
-      </main>
-    </>
-  );
-      };
+        
+        : "" }
+        </>
+          </>
+          ); 
+        }; 
