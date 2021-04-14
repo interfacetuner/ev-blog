@@ -14,7 +14,11 @@ const OneWheel = (props) => {
     <div>
     <h1>OneWheel</h1>
     <img src="https://i.imgur.com/UyHXS4em.jpg" alt="XR" />
+    <h3>XR</h3>
+    <p>Speed: 19mph Range: 12 - 18mi.  ChargeTime: 110min. FastCharger: 50min.</p>
     <img src="https://i.imgur.com/pHGfh0Hm.jpg" alt="Pint" />
+    <h3>PINT</h3>
+    <p>Speed: 16mph Range: 6 - 8mi.  ChargeTime: 120min. FastCharger: 50min.</p>
     <Link to="/">HOME</Link>
     </div>
     <div>

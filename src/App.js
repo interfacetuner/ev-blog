@@ -20,7 +20,7 @@ export default function App() {
   //   }
 
   const [state, setState] = useState({
-    form: true,
+    form: false,
     user: null,
     blogs: [{ blog: "Comment", level: "4" }],
     newBlog: {
@@ -109,6 +109,9 @@ export default function App() {
         state.form = true;
       } 
 
+      // function addBlog(e) {
+      //   if(!state.user) return;
+
     return (
       <>
         <Header user={state.user} />
@@ -117,11 +120,11 @@ export default function App() {
         <Switch>
       <Route exact path="/" render={(props) => 
          <HomePage 
-          {...props} handleClick={handleClick}
+          {...props} 
           />
         } /> 
         <Route path="/pages/Boosted/Boosted" render={(props) => 
-          <Boosted {...props} 
+          <Boosted {...props} handleClick={handleClick}
           />
         } />
         <Route path="/pages/OneWheel/OneWheel" render={(props) => 

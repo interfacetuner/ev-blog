@@ -50,9 +50,9 @@ section > article {
   display: flex;
   justify-content: space-between;
   min-width: 15rem;
-  color: green;
+  color: blue;
   margin: 0.1rem;
-  background-color: black;
+  background-color: white;
 }
 article > div {
   padding: 0.5rem;
