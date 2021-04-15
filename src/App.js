@@ -42,7 +42,8 @@ export default function App() {
 
   useEffect(() => {
     getAppData();
-    auth.onAuthStateChanged((user) => {
+
+    const cancelSubscription = auth.onAuthStateChanged((user) => {
       if (user) {
         setState((prevState) => ({
           ...prevState,
@@ -55,6 +56,10 @@ export default function App() {
         }));
       }
     });
+    return function() { 
+      cancelSubscription();
+    }
+
   }, []);
 
   async function addBlog(e) {
