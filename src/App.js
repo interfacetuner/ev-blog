@@ -148,7 +148,7 @@ export default function App() {
         </BrowserRouter>
         </main>
         
-        <React.Fragment key={render(!"/")}> 
+        <> 
         { isFormTrue  ?
         
         <section>
@@ -185,7 +185,7 @@ export default function App() {
         </section>
         
         : "" }
-        </React.Fragment>
+        </>
           </>
           ); 
         }; 
