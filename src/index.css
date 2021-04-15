@@ -2,9 +2,12 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: medium;
   margin: 0;
 }
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -16,9 +19,9 @@ header {
   align-items: center;
   height: 3rem;
   padding-left: 1rem;
-  background-color: blue;
-  box-shadow: 3px 3px 3px 3px #808080;
-  color: white;
+  background-color: rgb(104, 183, 223);
+  box-shadow: 5px 5px 5px 5px #808080;
+  color: rgba(84, 88, 104, 0.945);
 }
 header > ul {
   list-style: none;
@@ -40,6 +43,27 @@ header > ul img {
   height: 2.5rem;
   border-radius: 50%;
 }
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.HomePage > img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+OneWheel > img {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
 main {
   flex-grow: 1;
   display: flex;
@@ -49,17 +73,17 @@ main {
 section > article {
   display: flex;
   justify-content: space-between;
-  min-width: 15rem;
-  color: blue;
+  min-width: 2rem;
+  color: white;
   margin: 0.1rem;
-  background-color: white;
+  background-color: rgb(104, 183, 223);
 }
 article > div {
   padding: 0.5rem;
 }
 article > div:nth-child(2) {
   width: 2rem;
-  background-color: red;
+  background-color: rgba(84, 88, 104, 0.945);
   text-align: center;
 }
 label {
@@ -68,8 +92,9 @@ label {
   margin-top: 0.5rem;
 }
 label span {
-  color: #737495;
-  width: 4.5rem;
+  font-size: 1rem;
+  color: rgba(84, 88, 104, 0.945);
+  width: 5rem;
 }
 input,
 select {
@@ -78,8 +103,8 @@ select {
   font-size: 1rem;
   font-weight: bold;
   padding: 0.4rem;
-  color: red;
-  border: 2px solid #737495;
+  color: rgba(84, 88, 104, 0.945);
+  border: 3px solid rgb(104, 183, 223);
   border-radius: 0;
   outline: none;
   -webkit-appearance: none;

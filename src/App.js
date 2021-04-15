@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from "react";
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -11,6 +12,7 @@ import "./index.css";
 
 
 import { auth } from './services/firebase';
+import { render } from '@testing-library/react';
 
 export default function App() {
   // const Form = (props) => {
@@ -103,14 +105,14 @@ export default function App() {
     // function renderForm({ Form }) {
     //       if (this.props.path  !== './') {
     //           return ( 
-      const isFormTrue = state.form;
+      
 
      function handleClick(state) {
         state.form = true;
       } 
 
-      // function addBlog(e) {
-      //   if(!state.user) return;
+      const isFormTrue = state.form;
+
 
     return (
       <>
@@ -146,7 +148,7 @@ export default function App() {
         </BrowserRouter>
         </main>
         
-        <> 
+        <React.Fragment key={render(!"/")}> 
         { isFormTrue  ?
         
         <section>
@@ -183,7 +185,7 @@ export default function App() {
         </section>
         
         : "" }
-        </>
+        </React.Fragment>
           </>
           ); 
         }; 

@@ -9,8 +9,8 @@ import SegWay from "../../pages/SegWay/SegWay";
 
 const HomePage = (props) => {
     return (
-      <div>
-      <h1>HomePage</h1>
+      <div class='HomePage'>
+  
       <div>
         <Link to="../../pages/Boosted/Boosted">
       <img src="https://i.imgur.com/AwJLoXPm.jpg" width="192" height="150" alt="boosted logo" />

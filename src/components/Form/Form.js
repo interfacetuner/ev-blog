@@ -1,5 +1,5 @@
 // import App from '../../App.js';
-// import { withRouter } from 'react-router-dom';
+// import { Route, withRouter } from 'react-router-dom';
 // import { useState, useEffect } from "react";
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import Boosted from "../../pages/Boosted/Boosted";
@@ -7,10 +7,9 @@
 // import SegWay from "../../pages/SegWay/SegWay";
 
 
-// const Form = (props) => {
-//   (this.state.Form)
+// const showForm = (props) => {
 //         return (
-//           <>
+        
 //             {state.blogs.map((s) => (
 //               <article key={s.blog}>
 //                 <div>{s.blog}</div> <div>{s.level}</div>
@@ -18,7 +17,7 @@
 //             ))}
 //             {
 //               state.user &&
-//             <>
+//             <div>
 //             <hr />
 //             <form onSubmit={addBlog}>
 //               <label>
@@ -38,12 +37,8 @@
 //                 </label>
 //                 <button>ADD COMMENT</button>
 //               </form>
-//               </>
-          
-//         ;
+//               </div>
             
-           
-
-          
-
-//         export default Form;
+            
+        
+//             export default showForm;
