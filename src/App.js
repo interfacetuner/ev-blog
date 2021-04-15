@@ -28,7 +28,7 @@ export default function App() {
 
   async function getAppData() {
     try {
-      const BASE_URL = "http://localhost:3001/api/blogs";
+      const BASE_URL = "https://ev-blog-app.herokuapp.com/api/blogs";
 
       const blogs = await fetch(BASE_URL).then((res) => res.json());
       setState((prevState) => ({
@@ -62,7 +62,7 @@ export default function App() {
 
     e.preventDefault();
 
-    const BASE_URL = "http://localhost:3001/api/blogs"; //??
+    const BASE_URL = "https://ev-blog-app.herokuapp.com/api/blogs"; //??
 
     const blog = await fetch(BASE_URL, {
       method: "POST",
