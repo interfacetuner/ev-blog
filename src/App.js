@@ -1,26 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import Boosted from "./pages/Boosted/Boosted";
 import OneWheel from "./pages/OneWheel/OneWheel";
-import Form from "./components/Form/Form";
 import SegWay from "./pages/SegWay/SegWay";
 import Ktm from "./pages/Ktm/Ktm";
 import "./index.css";
 
 import { auth } from "./services/firebase";
-import { render } from "@testing-library/react";
+
 
 export default function App() {
-  // const Form = (props) => {
-  //   const { location } = props;
-  //   if (location.pathname.match('./')){
-  //       return null;
-  //   }
-
+  
   const [state, setState] = useState({
     form: true,
     user: null,
@@ -101,10 +94,7 @@ export default function App() {
     }));
   }
 
-  // function renderForm({ Form }) {
-  //       if (this.props.path  !== './') {
-  //           return (
-
+  
   function handleClick(state) {
     state.form = true;
   }
@@ -135,10 +125,6 @@ export default function App() {
             <Route
               path="/pages/Ktm/Ktm"
               render={(props) => <Ktm {...props} />}
-            />
-            <Route
-              render="/components/Form/Form"
-              render={(props) => <Form {...props} />}
             />
             <Route render={(props) => <NotFound />} />
           </Switch>

@@ -1,10 +1,6 @@
-import ReactDOM from "react-dom";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import HomePage from "../../pages/HomePage/HomePage";
 import "../../index.css";
-//import Form from "../../components/Form/Form";
+
 
 const Boosted = (props) => {
   return (

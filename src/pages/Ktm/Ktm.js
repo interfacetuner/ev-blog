@@ -1,8 +1,5 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import HomePage from "../../pages/HomePage/HomePage";
+
 
 const Ktm = (props) => {
   // const [useState, useEffect] = React.useState(false)

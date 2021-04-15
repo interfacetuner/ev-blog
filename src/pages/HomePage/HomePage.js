@@ -1,10 +1,4 @@
 import { Link } from "react-router-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import Boosted from "../../pages/Boosted/Boosted";
-import OneWheel from "../../pages/OneWheel/OneWheel";
-import SegWay from "../../pages/SegWay/SegWay";
-import Ktm from "../../pages/Ktm/Ktm";
 import "../../index.css";
 
 const HomePage = (props) => {
