@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 import { useState, useEffect } from "react";
-import { withRouter } from 'react-router-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import Boosted from "./pages/Boosted/Boosted";
 import OneWheel from "./pages/OneWheel/OneWheel";
 import Form from "./components/Form/Form";
 import SegWay from "./pages/SegWay/SegWay";
+import Ktm from "./pages/Ktm/Ktm";
 import "./index.css";
 
-
-import { auth } from './services/firebase';
-import { render } from '@testing-library/react';
+import { auth } from "./services/firebase";
+import { render } from "@testing-library/react";
 
 export default function App() {
   // const Form = (props) => {
@@ -22,7 +22,7 @@ export default function App() {
   //   }
 
   const [state, setState] = useState({
-    form: false,
+    form: true,
     user: null,
     blogs: [{ blog: "Comment", level: "4" }],
     newBlog: {
@@ -35,52 +35,51 @@ export default function App() {
 
   async function getAppData() {
     try {
-      const BASE_URL = 'http://localhost:3001/api/blogs';
+      const BASE_URL = "http://localhost:3001/api/blogs";
 
-      const blogs = await fetch(BASE_URL).then(res => res.json());
+      const blogs = await fetch(BASE_URL).then((res) => res.json());
       setState((prevState) => ({
         ...prevState,
         blogs,
       }));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   useEffect(() => {
     getAppData();
-    auth.onAuthStateChanged(user => {
-      if(user) {
-        setState(prevState => ({
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setState((prevState) => ({
           ...prevState,
           user,
         }));
       } else {
-        setState(prevState => ({
+        setState((prevState) => ({
           ...prevState,
-          user: null
+          user: null,
         }));
       }
-    })
+    });
   }, []);
 
   async function addBlog(e) {
-    if(!state.user) return;
+    if (!state.user) return;
 
     e.preventDefault();
 
-    const BASE_URL = 'http://localhost:3001/api/blogs'; //??
+    const BASE_URL = "http://localhost:3001/api/blogs"; //??
 
     const blog = await fetch(BASE_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-type': 'Application/json'
+        "Content-type": "Application/json",
       },
-      body: JSON.stringify(state.newBlog)
-    }).then(res => res.json());
+      body: JSON.stringify(state.newBlog),
+    }).then((res) => res.json());
 
     console.log(blog);
-
 
     setState((prevState) => ({
       ...prevState,
@@ -94,64 +93,62 @@ export default function App() {
 
   function handleChange(e) {
     setState((prevState) => ({
-      ...prevState, 
+      ...prevState,
       newBlog: {
         ...prevState.newBlog,
-        [e.target.name]: e.target.value 
-      }
-    })) 
+        [e.target.name]: e.target.value,
+      },
+    }));
   }
 
-    // function renderForm({ Form }) {
-    //       if (this.props.path  !== './') {
-    //           return ( 
-      
+  // function renderForm({ Form }) {
+  //       if (this.props.path  !== './') {
+  //           return (
 
-     function handleClick(state) {
-        state.form = true;
-      } 
+  function handleClick(state) {
+    state.form = true;
+  }
 
-      const isFormTrue = state.form;
+  const isFormTrue = state.form;
 
-
-    return (
-      <>
-        <Header user={state.user} />
-        <main>
-       <BrowserRouter>
-        <Switch>
-      <Route exact path="/" render={(props) => 
-         <HomePage 
-          {...props} 
-          />
-        } /> 
-        <Route path="/pages/Boosted/Boosted" render={(props) => 
-          <Boosted {...props} handleClick={handleClick}
-          />
-        } />
-        <Route path="/pages/OneWheel/OneWheel" render={(props) => 
-          <OneWheel {...props} 
-          />
-        } />
-        <Route path="/pages/SegWay/SegWay" render={(props) => 
-          <SegWay {...props} 
-          />
-        } />
-        <Route render="/components/Form/Form" render={(props) => 
-          <Form {...props} 
-          />
-        } />
-        <Route render={(props) =>
-        <NotFound />
-        }/>
-        </Switch>
+  return (
+    <>
+      <Header user={state.user} />
+      <main>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" render={(props) => <HomePage {...props} />} />
+            <Route
+              path="/pages/Boosted/Boosted"
+              render={(props) => (
+                <Boosted {...props} handleClick={handleClick} />
+              )}
+            />
+            <Route
+              path="/pages/OneWheel/OneWheel"
+              render={(props) => <OneWheel {...props} />}
+            />
+            <Route
+              path="/pages/SegWay/SegWay"
+              render={(props) => <SegWay {...props} />}
+            />
+            <Route
+              path="/pages/Ktm/Ktm"
+              render={(props) => <Ktm {...props} />}
+            />
+            <Route
+              render="/components/Form/Form"
+              render={(props) => <Form {...props} />}
+            />
+            <Route render={(props) => <NotFound />} />
+          </Switch>
         </BrowserRouter>
-        </main>
+      </main>
+
+      <>
+      { isFormTrue  ?
         
-        <> 
-        { isFormTrue  ?
-        
-        <section>
+        <section className="formPage">
         {state.blogs.map((s) => (
           <article key={s.blog}>
             <div>{s.blog}</div> <div>{s.level}</div>
@@ -188,4 +185,4 @@ export default function App() {
         </>
           </>
           ); 
-        }; 
+        };  

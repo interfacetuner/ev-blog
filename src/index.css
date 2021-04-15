@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 body {
+  /* background-image: url("https://i.imgur.com/k984vv3.png"); */
+  background-color:rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: medium;
@@ -17,11 +19,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
+  height: 7rem;
   padding-left: 1rem;
-  background-color: rgb(104, 183, 223);
+  background-image: url("https://i.imgur.com/pUBAoTTl.jpg");
   box-shadow: 5px 5px 5px 5px #808080;
-  color: rgba(84, 88, 104, 0.945);
+  color: rgba(218, 222, 236, 0.945);
 }
 header > ul {
   list-style: none;
@@ -49,16 +51,22 @@ h1 {
   justify-content: center;
 }
 
-.HomePage > img {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-OneWheel > img {
+h2 {
   display: flex;
   justify-content: center;
+  color: rgba(84, 88, 104, 0.945);
 }
+
+
+section.formPage {
+  opacity: 0;
+}
+
+
+/* OneWheel > img {
+  display: flex;
+  justify-content: center;
+} */
 
 p {
   font-size: 1.5rem;

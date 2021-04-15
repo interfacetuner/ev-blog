@@ -1,33 +1,54 @@
-import { Link } from 'react-router-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Boosted from "../../pages/Boosted/Boosted";
 import OneWheel from "../../pages/OneWheel/OneWheel";
 import SegWay from "../../pages/SegWay/SegWay";
-
-
+import Ktm from "../../pages/Ktm/Ktm";
+import "../../index.css";
 
 const HomePage = (props) => {
-    return (
-      <div class='HomePage'>
-  
+  return (
+    <div className="homePage">
+      <h2>Select a logo to see featured electric vehicles</h2>
       <div>
         <Link to="../../pages/Boosted/Boosted">
-      <img src="https://i.imgur.com/AwJLoXPm.jpg" width="192" height="150" alt="boosted logo" />
-      </Link>
-    
-      <Link to="../../pages/OneWheel/OneWheel">
-      <img src="https://i.imgur.com/KJntIKym.png" width="192" height="150" alt="onewheel logo" />
-      </Link>
+          <img
+            src="https://i.imgur.com/AwJLoXPm.jpg"
+            width="192"
+            height="150"
+            alt="boosted logo"
+          />
+        </Link>
 
-      <Link to="../../pages/SegWay/SegWay">
-      <img src="https://i.imgur.com/kmPSZUhm.jpg" width="192" height="150" alt="SegWay logo" />
-      </Link>
-      
+        <Link to="../../pages/OneWheel/OneWheel">
+          <img
+            src="https://i.imgur.com/KJntIKym.png"
+            width="192"
+            height="150"
+            alt="onewheel logo"
+          />
+        </Link>
+
+        <Link to="../../pages/SegWay/SegWay">
+          <img
+            src="https://i.imgur.com/kmPSZUhm.jpg"
+            width="192"
+            height="150"
+            alt="SegWay logo"
+          />
+        </Link>
+        <Link to="../../pages/Ktm/Ktm">
+          <img
+            src="https://i.imgur.com/A6mzEWqm.jpg"
+            width="192"
+            height="150"
+            alt="Ktm logo"
+          />
+        </Link>
       </div>
-      </div>
-      
-    );
+    </div>
+  );
 };
 
 export default HomePage;
