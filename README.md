@@ -14,7 +14,7 @@
 8. React
 9. Firebase
 
-<h3>Unresolved issues<h3>
+<h3>Unresolved issues:<h3>
 
 1. Hiding form on HomePage route
 2. Rendering form for individual items 
@@ -23,6 +23,7 @@
 
 1. Comments per individual item
 2. More electric vehicles
+
 
 Trello: <https://trello.com/b/pCaszaM1/sei-project3>
 
